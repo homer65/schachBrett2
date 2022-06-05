@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/master/!svn/ver/269/schachBrett2/src/pack
+END
+BrettPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/master/!svn/ver/269/schachBrett2/src/pack/BrettPanel.java
+END
+Menu.java
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/master/!svn/ver/269/schachBrett2/src/pack/Menu.java
+END
+PartieMenu.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/master/!svn/ver/290/schachBrett2/src/pack/PartieMenu.java
+END
+ImagePanelListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/master/!svn/ver/269/schachBrett2/src/pack/ImagePanelListener.java
+END
+BrettListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/master/!svn/ver/269/schachBrett2/src/pack/BrettListener.java
+END
+ImagePanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/master/!svn/ver/269/schachBrett2/src/pack/ImagePanel.java
+END
+Main.java
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/master/!svn/ver/269/schachBrett2/src/pack/Main.java
+END
+BrettEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/master/!svn/ver/269/schachBrett2/src/pack/BrettEvent.java
+END
+BrettMenu.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/master/!svn/ver/269/schachBrett2/src/pack/BrettMenu.java
+END
