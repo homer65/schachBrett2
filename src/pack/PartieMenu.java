@@ -24,7 +24,7 @@ public class PartieMenu extends Menu implements ActionListener,BrettListener
 	private JButton butt3 = new JButton("Patt?");
 	private JButton butt4 = new JButton("Drehen");
 	private JButton butt5 = new JButton("Kernel");
-	private JButton butt6 = new JButton("Engine");
+	private JButton butt6 = new JButton("Analyse");
 	private JPanel cpan = null;
 	private JTextArea ta = null;
 	private JTextArea taengine = null;
@@ -345,10 +345,10 @@ public class PartieMenu extends Menu implements ActionListener,BrettListener
 								Figur weisseDame = Factory.getFigur();
 								weisseDame.setWeiss();
 								weisseDame.setDame();
-								String[] values = {"Dame","Turm","Läufer","Springer"};
+								String[] values = {"Dame","Turm","Lï¿½ufer","Springer"};
 								Object selected = JOptionPane.showInputDialog(
 										null,
-										"Bitte Figur auswählen",
+										"Bitte Figur auswï¿½hlen",
 										"?",
 										JOptionPane.DEFAULT_OPTION,
 										null,
@@ -359,7 +359,7 @@ public class PartieMenu extends Menu implements ActionListener,BrettListener
 									String s = selected.toString();
 									System.out.println("PartieMenu:event:Neue Figur:" + s);
 									if (s.equals("Turm")) weisseDame.setTurm();
-									if (s.equals("Läufer")) weisseDame.setLaeufer();
+									if (s.equals("Lï¿½ufer")) weisseDame.setLaeufer();
 									if (s.equals("Springer")) weisseDame.setSpringer();
 								}
 								nf = weisseDame;
@@ -378,7 +378,7 @@ public class PartieMenu extends Menu implements ActionListener,BrettListener
 								Figur schwarzeDame = Factory.getFigur();
 								schwarzeDame.setSchwarz();
 								schwarzeDame.setDame();
-								String[] values = {"Dame","Turm","Läufer","Springer"};
+								String[] values = {"Dame","Turm","Lï¿½ufer","Springer"};
 								Object selected = JOptionPane.showInputDialog(
 										null,
 										"Bitte Figur auswÃ¤hlen",
@@ -392,7 +392,7 @@ public class PartieMenu extends Menu implements ActionListener,BrettListener
 									String s = selected.toString();
 									System.out.println("PartieMenu:event:Neue Figur:" + s);
 									if (s.equals("Turm")) schwarzeDame.setTurm();
-									if (s.equals("Läufer")) schwarzeDame.setLaeufer();
+									if (s.equals("Lï¿½ufer")) schwarzeDame.setLaeufer();
 									if (s.equals("Springer")) schwarzeDame.setSpringer();
 								}
 								nf = schwarzeDame;
