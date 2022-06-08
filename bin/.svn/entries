@@ -1,34 +1,0 @@
-10
-
-dir
-269
-https://itgs01.ad.volkswohl-bund.de/svn/master/schachBrett2/src
-https://itgs01.ad.volkswohl-bund.de/svn/master
-
-
-
-2017-10-25T07:44:05.192213Z
-269
-christian
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-473e6317-3926-cc45-9da4-f982132180f0
-
-pack
-dir
-
-schachfiguren
-dir
-
