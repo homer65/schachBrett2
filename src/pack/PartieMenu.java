@@ -215,7 +215,7 @@ public class PartieMenu extends Menu implements ActionListener,BrettListener
 			{
 				String command = "stop";
 				engine.sendCommand(command);
-				wait(500);
+				wait(750);
 				command = "position startpos moves";
 				ArrayList<Zug> zuege = partie.getZuege();
 				for (int i=0;i<zuege.size();i++)
@@ -227,7 +227,7 @@ public class PartieMenu extends Menu implements ActionListener,BrettListener
 					command += " " + notation;
 				}
 				engine.sendCommand(command);
-				wait(100);
+				wait(750);
 				command = "go infinite";
 				engine.sendCommand(command);
 			}
@@ -285,7 +285,7 @@ public class PartieMenu extends Menu implements ActionListener,BrettListener
 					wait(100);
 					String command = "ucinewgame";
 					engine.sendCommand(command);
-					wait(100);
+					wait(750);
 					command = "position startpos moves";
 					ArrayList<Zug> zuege = partie.getZuege();
 					for (int i=0;i<zuege.size();i++)
@@ -297,7 +297,7 @@ public class PartieMenu extends Menu implements ActionListener,BrettListener
 						command += " " + notation;
 					}
 					engine.sendCommand(command);
-					wait(100);
+					wait(750);
 					command = "go infinite";
 					engine.sendCommand(command);
 				}
@@ -345,10 +345,10 @@ public class PartieMenu extends Menu implements ActionListener,BrettListener
 								Figur weisseDame = Factory.getFigur();
 								weisseDame.setWeiss();
 								weisseDame.setDame();
-								String[] values = {"Dame","Turm","L�ufer","Springer"};
+								String[] values = {"Dame","Turm","Laeufer","Springer"};
 								Object selected = JOptionPane.showInputDialog(
 										null,
-										"Bitte Figur ausw�hlen",
+										"Bitte Figur auswaehlen",
 										"?",
 										JOptionPane.DEFAULT_OPTION,
 										null,
@@ -359,7 +359,7 @@ public class PartieMenu extends Menu implements ActionListener,BrettListener
 									String s = selected.toString();
 									System.out.println("PartieMenu:event:Neue Figur:" + s);
 									if (s.equals("Turm")) weisseDame.setTurm();
-									if (s.equals("L�ufer")) weisseDame.setLaeufer();
+									if (s.equals("Laeufer")) weisseDame.setLaeufer();
 									if (s.equals("Springer")) weisseDame.setSpringer();
 								}
 								nf = weisseDame;
@@ -378,10 +378,10 @@ public class PartieMenu extends Menu implements ActionListener,BrettListener
 								Figur schwarzeDame = Factory.getFigur();
 								schwarzeDame.setSchwarz();
 								schwarzeDame.setDame();
-								String[] values = {"Dame","Turm","L�ufer","Springer"};
+								String[] values = {"Dame","Turm","Laeufer","Springer"};
 								Object selected = JOptionPane.showInputDialog(
 										null,
-										"Bitte Figur auswählen",
+										"Bitte Figur auswaehlen",
 										"?",
 										JOptionPane.DEFAULT_OPTION,
 										null,
@@ -392,7 +392,7 @@ public class PartieMenu extends Menu implements ActionListener,BrettListener
 									String s = selected.toString();
 									System.out.println("PartieMenu:event:Neue Figur:" + s);
 									if (s.equals("Turm")) schwarzeDame.setTurm();
-									if (s.equals("L�ufer")) schwarzeDame.setLaeufer();
+									if (s.equals("Laeufer")) schwarzeDame.setLaeufer();
 									if (s.equals("Springer")) schwarzeDame.setSpringer();
 								}
 								nf = schwarzeDame;
@@ -422,7 +422,7 @@ public class PartieMenu extends Menu implements ActionListener,BrettListener
 					{
 						String command = "stop";
 						engine.sendCommand(command);
-						wait(500);
+						wait(750);
 						command = "position startpos moves";
 						ArrayList<Zug> zuege = partie.getZuege();
 						for (int i=0;i<zuege.size();i++)
@@ -434,7 +434,7 @@ public class PartieMenu extends Menu implements ActionListener,BrettListener
 							command += " " + notation;
 						}
 						engine.sendCommand(command);
-						wait(100);
+						wait(750);
 						command = "go infinite";
 						engine.sendCommand(command);
 					}
