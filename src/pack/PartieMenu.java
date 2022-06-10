@@ -43,6 +43,8 @@ public class PartieMenu extends Menu implements ActionListener,BrettListener
 	private JMenuItem item11 = new JMenuItem("backup");
 	private JMenuItem item12 = new JMenuItem("restore");
 	private JMenuItem item13 = new JMenuItem("print to HTML");
+	private JMenuItem item14 = new JMenuItem("backup to xml");
+	private JMenuItem item15 = new JMenuItem("restore from xml");
 	private JMenu menu2 = new JMenu("Engine");
 	private JMenuItem item21 = new JMenuItem("Choose Engine");
 	private JMenu menu3 = new JMenu("Info");
@@ -58,6 +60,8 @@ public class PartieMenu extends Menu implements ActionListener,BrettListener
 		menu1.add(item11);
 		menu1.add(item12);
 		menu1.add(item13);
+		menu1.add(item14);
+		menu1.add(item15);
 		menu2.add(item21);
 		menu3.add(item31);
 		this.partie = partie;
@@ -70,6 +74,8 @@ public class PartieMenu extends Menu implements ActionListener,BrettListener
 		item11.addActionListener(this);
 		item12.addActionListener(this);
 		item13.addActionListener(this);
+		item14.addActionListener(this);
+		item15.addActionListener(this);
 		item21.addActionListener(this);
 		item31.addActionListener(this);
 		init();
@@ -162,6 +168,45 @@ public class PartieMenu extends Menu implements ActionListener,BrettListener
 				catch (Exception e)
 				{
 					System.out.println("PartieMenu:actionPerformed:item12:Exception:");
+					System.out.println(e.toString());
+				}
+			}
+			init();
+		}
+		if (source == item14)
+		{
+			JFileChooser chooser = new JFileChooser();
+			int rc = chooser.showOpenDialog(null);
+			if (rc == JFileChooser.APPROVE_OPTION)
+			{
+				try
+				{
+					File file = chooser.getSelectedFile();
+					XML xml = new XML();
+					xml.save(file,partie);
+				}
+				catch (Exception e)
+				{
+					System.out.println("PartieMenu:actionPerformed:item14:Exception:");
+					System.out.println(e.toString());
+				}
+			}
+		}
+		if (source == item15)
+		{
+			JFileChooser chooser = new JFileChooser();
+			int rc = chooser.showOpenDialog(null);
+			if (rc == JFileChooser.APPROVE_OPTION)
+			{
+				try
+				{
+					File file = chooser.getSelectedFile();
+					XML xml = new XML();
+					partie = xml.read(file);
+				}
+				catch (Exception e)
+				{
+					System.out.println("PartieMenu:actionPerformed:item15:Exception:");
 					System.out.println(e.toString());
 				}
 			}
