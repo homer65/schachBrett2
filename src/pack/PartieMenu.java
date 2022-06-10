@@ -3,13 +3,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
-import java.io.InputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.OutputStream;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.prefs.Preferences;
@@ -40,8 +34,6 @@ public class PartieMenu extends Menu implements ActionListener,BrettListener
 	private boolean viewWeiss = true;
 	private JMenuBar menubar = new JMenuBar();
 	private JMenu menu1 = new JMenu("File");
-	private JMenuItem item11 = new JMenuItem("backup");
-	private JMenuItem item12 = new JMenuItem("restore");
 	private JMenuItem item13 = new JMenuItem("print to HTML");
 	private JMenuItem item14 = new JMenuItem("backup to xml");
 	private JMenuItem item15 = new JMenuItem("restore from xml");
@@ -57,8 +49,6 @@ public class PartieMenu extends Menu implements ActionListener,BrettListener
 		menubar.add(menu1);
 		menubar.add(menu2);
 		menubar.add(menu3);
-		menu1.add(item11);
-		menu1.add(item12);
 		menu1.add(item13);
 		menu1.add(item14);
 		menu1.add(item15);
@@ -71,8 +61,6 @@ public class PartieMenu extends Menu implements ActionListener,BrettListener
 		butt4.addActionListener(this);
 		butt5.addActionListener(this);
 		butt6.addActionListener(this);
-		item11.addActionListener(this);
-		item12.addActionListener(this);
 		item13.addActionListener(this);
 		item14.addActionListener(this);
 		item15.addActionListener(this);
@@ -130,49 +118,6 @@ public class PartieMenu extends Menu implements ActionListener,BrettListener
 	public void actionPerformed(ActionEvent ae)
 	{
 		Object source = ae.getSource();
-		if (source == item11)
-		{
-			JFileChooser chooser = new JFileChooser();
-			int rc = chooser.showOpenDialog(null);
-			if (rc == JFileChooser.APPROVE_OPTION)
-			{
-				try
-				{
-					File file = chooser.getSelectedFile();
-					OutputStream os = new FileOutputStream(file);
-					ObjectOutputStream oos = new ObjectOutputStream(os);
-					oos.writeObject(partie);
-					oos.close();
-				}
-				catch (Exception e)
-				{
-					System.out.println("PartieMenu:actionPerformed:item11:Exception:");
-					System.out.println(e.toString());
-				}
-			}
-		}
-		if (source == item12)
-		{
-			JFileChooser chooser = new JFileChooser();
-			int rc = chooser.showOpenDialog(null);
-			if (rc == JFileChooser.APPROVE_OPTION)
-			{
-				try
-				{
-					File file = chooser.getSelectedFile();
-					InputStream is = new FileInputStream(file);
-					ObjectInputStream ois = new ObjectInputStream(is);
-					partie = (Spiel)ois.readObject();
-					ois.close();
-				}
-				catch (Exception e)
-				{
-					System.out.println("PartieMenu:actionPerformed:item12:Exception:");
-					System.out.println(e.toString());
-				}
-			}
-			init();
-		}
 		if (source == item14)
 		{
 			JFileChooser chooser = new JFileChooser();
