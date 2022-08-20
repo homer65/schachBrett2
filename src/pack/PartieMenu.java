@@ -192,7 +192,7 @@ public class PartieMenu extends Menu implements ActionListener,BrettListener
 		}
 		if (source == item31)
 		{
-			Protokol.write("Version 04.06.2022");
+			Protokol.write("Version 20.08.2022");
 			Version version = new Version();
 			String info = version.getVersion();
 			Protokol.write("Kernel Version:");
@@ -271,6 +271,7 @@ public class PartieMenu extends Menu implements ActionListener,BrettListener
 				{
 					engineOn = true;
 					engine = new Engine(taengine);
+					engine.setPriority(Thread.MIN_PRIORITY);
 					engine.start();
 					wait(100);
 					String command = "ucinewgame";
