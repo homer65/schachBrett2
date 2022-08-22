@@ -46,6 +46,7 @@ public class PartieMenu extends Menu implements ActionListener,BrettListener
 	private Preferences prefs = Preferences.userRoot();
 	public PartieMenu(Spiel partie)
 	{
+		Thread.currentThread().setPriority(Thread.NORM_PRIORITY);
 		menubar.add(menu1);
 		menubar.add(menu2);
 		menubar.add(menu3);
