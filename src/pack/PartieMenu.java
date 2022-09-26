@@ -193,7 +193,7 @@ public class PartieMenu extends Menu implements ActionListener,BrettListener
 		}
 		if (source == item31)
 		{
-			Protokol.write("Version 20.08.2022");
+			Protokol.write("Version 26.09.2022");
 			Version version = new Version();
 			String info = version.getVersion();
 			Protokol.write("Kernel Version:");
@@ -214,7 +214,9 @@ public class PartieMenu extends Menu implements ActionListener,BrettListener
 					Zug zug = zuege.get(i);
 					Position von = zug.getVon();
 					Position nach = zug.getNach();
+					Figur figur = zug.getNeueFigur();
 					String notation = von.getNotation() + nach.getNotation();
+					if (figur != null) notation += "Q";
 					command += " " + notation;
 				}
 				engine.sendCommand(command);
@@ -285,7 +287,9 @@ public class PartieMenu extends Menu implements ActionListener,BrettListener
 						Zug zug = zuege.get(i);
 						Position von = zug.getVon();
 						Position nach = zug.getNach();
+						Figur figur = zug.getNeueFigur();
 						String notation = von.getNotation() + nach.getNotation();
+						if (figur != null) notation += "Q";
 						command += " " + notation;
 					}
 					engine.sendCommand(command);
@@ -422,7 +426,9 @@ public class PartieMenu extends Menu implements ActionListener,BrettListener
 							Zug zug = zuege.get(i);
 							Position von = zug.getVon();
 							Position nach = zug.getNach();
+							Figur figur = zug.getNeueFigur();
 							String notation = von.getNotation() + nach.getNotation();
+							if (figur != null) notation += "Q";
 							command += " " + notation;
 						}
 						engine.sendCommand(command);
